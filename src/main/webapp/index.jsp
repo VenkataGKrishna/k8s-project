@@ -1,7 +1,7 @@
 <html>
 <body>
-<h2>Hello World! Welcome to Jenkins</h2>
-  <h8>Welcome to Jenkins</h5>
-<h10>Tomcat updated</h10>
+<h1>Hello World! Welcome to DevOps</h1>
+<h2>Welcome to Jenkins</h2>
+<h2>Tomcat updated</h2>
 </body>
 </html>
