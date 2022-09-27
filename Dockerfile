@@ -1,7 +1,2 @@
-FROM openjdk:8
-
-EXPOSE 8080
-
-ADD target/*.war *.war
-
-CMD["bash"]
+FROM tomcat:8
+COPY target/*.war /opt/tomcat9/webapps
