@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: k8sproject
+    app: k8s-app
+spec:
+  replicas: 3
+  selector: 
+    matchlabels:
+    app: k8s-app
+  template:
+    metadata:
+      labels:
+       app: k8s-app
+    spec:
+      containers:
+      - name: k8s-container
+        image: venkata1981/k8sjenkinsproject
+        ports:
+        - name: k8s-container
+          containerPort: 8080      
+---
+# Node Port Service
+apiVersion: v1
+kind: Service
+metadata:
+ name: my-service
+ labels:
+   app: k8s-app
+ spec:
+  selector: 
+   app: k8s-app
+  type: NodePort
+  ports:
+    - nodeport: 31111
+     port: 8080
+      targetPort: 8080
+  
